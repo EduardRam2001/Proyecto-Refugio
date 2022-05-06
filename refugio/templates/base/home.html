@@ -1,0 +1,86 @@
+
+{% extends 'base/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        {% block extrastatic %} {% endblock %}
+        <link rel="stylesheet" href="">
+        <meta charset="UTF-8">
+        <title>{% block title %} Inicio {% endblock %}</title>
+    </head>
+
+
+{% block content %}
+<body>
+ 
+
+    <div class="Estructura">
+        <div class="Diseño">
+            <div class="contenido">
+                <h2>Nuestra Misión</h2>
+                <h6>
+                    Mejorar el bienestar de los animales, y acabar con la crueldad 
+                    y la negligencia hacia ellos, con la cría descontrolada y el 
+                    abandono de los mismos a través de rescates, rehabilitación y
+                    tratamiento veterinario. Asi mismo cambiar la actitud de las 
+                    personas en favor del bienestar animal a través de la educación y 
+                    publicidad y de igual manera llegar al punto en el que se perciba
+                    a los animales como seres que sienten y que son nuestros compañeros.
+                </div>
+            </div>
+        </div>
+
+        <center>
+            <img src="{% static 'img/adop.jpg' %}" width="720" height="640" >
+        </center>
+
+        <div class="Diseño">
+            
+            <div class="contenido">
+                <h2>Nuestra Visión</h2>
+                <h6>
+                    Continuar rescatando animales necesitados con la esperanza de poder 
+                    cerrar las puertas porque no sea necesario seguir haciéndolo. Asi mismo 
+                    ser un albergue integral en Guatemala, modelo a seguir y  así poder replicarse 
+                    en todos los demas Departamentos. Proporcionando rescate, cuidados, rehabilitación 
+                    e información que contribuya a una sociedad en armonía con sus animales.
+
+ 
+                </h6>
+            </div>
+        </div>
+
+        <center>
+            <img src="{% static 'img/adopcion.jpg' %}" width="720" height="640" >
+                  
+        </center>
+
+        <div  class="Diseño">
+            
+            <div class="contenido">
+                <h2>Nuestros Obejtivos</h2>
+                <h6>
+                    <ul>
+                        <li type="disc">Tolerancia cero con el maltrato animal en nuestra sociedad. 
+                        <li type="disc"> Hacer frente a aquellos problemas que ponen en riesgo a los animales.</li>
+                        <li type="disc">Ser su voz en Guatemala</li>
+                        <li type="disc">Alto nivel de ética e integridad</li>
+                        <li type="disc">Estándares elevados en la gestión del refugio y en el cuidado de los animales</li>
+                    </ul>
+
+ 
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+</body>
+
+{% endblock %}
+
+</html>

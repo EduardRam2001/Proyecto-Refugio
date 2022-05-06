@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+        Editar Contraseña
+{% endblock %}
+
+
+{% block navbar%}
+{% endblock %}
+
+{% block content %}
+<h1>Actualizar Mi Contraseña</h1>
+<form method="post">
+        {% csrf_token %}
+		
+        	{{ form.as_p }}
+		
+
+        <button type="submit">Cambiar Contraseña</button>
+        <a class="btn btn-secondary" href="{% url 'usuario_perfil' %}">Cancelar</a>
+
+</form>
+{% endblock %}

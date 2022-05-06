@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Refugio de Mascotas
+{% endblock %}
+
+
+{% block navbar%}
+{% endblock %}
+{% block content %}
+<div style="text-align: center;">
+    <h2> Hola {{user}}</h2>
+    <h1> Intenta de nuevo</h1>
+    <a class="btn btn-primary" href="{% url 'validar_rostro' %}">Validar Rostro</a>
+    <a class="btn btn-secondary" href="{% url 'inicio' %}">Cancelar</a>
+</div>
+{% endblock %}

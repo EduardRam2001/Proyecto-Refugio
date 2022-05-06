@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %} 
+
+{% block title %}
+        Imprimir Reporte Mascotas
+{% endblock %}
+
+{% block navbar%}
+{% endblock %}
+
+{% block content %}
+<br>
+<h1>Listado de mascotas</h1>
+<table class="table table-hover">
+        <thead>
+                <tr>
+                        <th>Numero ID</th>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Sexo</th>
+                        <th>Edad</th>
+                        <th>Fecha de rescate</th>
+                        <th>Alimentacion</th>
+                        <th>Enfermedades</th>
+                        <th>Adoptante</th>
+                </tr>
+        </thead>
+
+        <tbody>
+                {% for mascota in mascotas %}
+                <tr>
+                        <td>{{mascota.id}}</td>
+                        <td>{{mascota.nombre}}</td>
+                        <td>{{mascota.raza}}</td>
+                        <td>{{mascota.sexo}}</td>
+                        <td>{{mascota.edad_aproximada}}</td>
+                        <td>{{mascota.fecha_rescate}}</td>
+                        <td>{{mascota.alimentacion}}</td>
+                        <td>{{mascota.enfermedades}}</td>
+                        <td>{{mascota.persona.nombre}} {{mascota.persona.apellidos}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+</table>
+
+
+
+{% endblock %}

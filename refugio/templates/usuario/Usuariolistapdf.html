@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %} 
+
+{% block title %}
+        Imprimir Reporte Usuarios
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+        
+<br>
+<h1>Listado de Usuarios</h1>
+<table class="table table-hover">
+        <thead>
+                <tr>
+                        
+                    <th>Usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                        
+                </tr>
+        </thead>
+        <tbody>
+                 {% for user in usuarios  %}
+                <tr>
+                    
+                    <td>{{user.username}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                        
+                </tr>
+                {% endfor %} 
+        </tbody>
+</table>
+
+
+
+{% endblock %}

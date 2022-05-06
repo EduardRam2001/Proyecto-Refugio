@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %} 
+
+{% block content %}
+<br>
+<form method="post">
+        {% csrf_token %}
+        <h3>¿Esta seguro de eliminar la solicitud de: {{ object.persona.nombre }} {{ object.persona.apellidos }}?</h3>
+        <button class="btn btn-danger" type="submit">Sí</button>
+        <a class="btn btn-secondary" href="{% url 'solicitud_listado' %}">Cancelar</a>
+</form>
+{% endblock %}

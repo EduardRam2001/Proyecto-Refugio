@@ -1,0 +1,84 @@
+{% extends 'base/base.html' %} 
+{% load static %}
+
+{% block title %}
+  Mi Perfil
+{% endblock %}
+{% block content %}
+        
+<br>
+<h1>Mi Perfil </h1>
+
+<div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+
+        <div x-data="{ open: false }" @keydown.window.escape="open = false" class=" mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
+            <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
+                {% if user.is_authenticated %}
+                <li>
+                        <a href="{% url 'usuario_perfil_edit' user.id %}" class="btn btn-primary">
+                                <span>Editar Perfil</span>
+
+                        </a>
+                </li>
+                
+                {% endif %}
+            </div>
+
+            <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
+                {% if user.is_authenticated %}
+                <li>
+                        <a href="{% url 'editar_password'%}" class="btn btn-secondary">
+                                <span>Editar Contraseña</span>
+                        </a>
+                </li>
+                
+                {% endif %}
+            </div>
+
+        </div>
+    
+</div>
+
+<div class="mt-5 border-t border-gray-200">
+        <dl class="sm:divide-y sm:divide-gray-200">
+          <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">
+              Nombre Completo
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {{user.first_name}} {{user.last_name}}
+            </dd>
+          </div>
+
+          <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                <dt class="text-sm font-medium text-gray-500">
+                  Nombre de Usuario
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  {{user.username}}
+                </dd>
+          </div>
+
+          <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                <dt class="text-sm font-medium text-gray-500">
+                  Identificacion de Usuario
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  {{user.id}}
+                </dd>
+          </div>
+
+          <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">
+              Correo Electronico
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {{user.email}}
+            </dd>
+          </div>
+        
+          
+    
+</div>
+
+{% endblock %}
