@@ -22,7 +22,7 @@ class SolicitudCreate(CreateView):
 	template_name = 'adopcion/solicitud_formulario.html'
 	form_class = SolicitudFormulario
 	second_form_class = PersonaFormulario
-	success_url = reverse_lazy('solicitud_listado')
+	success_url = reverse_lazy('home')
 
 	def get_context_data(self, **kwargs):
 		context = super(SolicitudCreate, self).get_context_data(**kwargs)
